@@ -1,25 +1,30 @@
-/* Fuzzy Robotics — PTSD: Terminal 01 publisher site */
+/* Fuzzy Robotics — cyberpunk 80s synth + 90s grunge */
 :root {
-    --bg: #0c0e12;
-    --bg-deep: #06080b;
-    --surface: #141820;
-    --surface-alt: #0f1218;
+    --bg: #0d0f14;
+    --bg-deep: #08090d;
+    --surface: #14191f;
+    --surface-alt: #0e1116;
     --border: #2a3142;
     --border-subtle: #1a1f2a;
-    --text: #e6e9f0;
-    --text-muted: #8b92a8;
-    /* Primary accent (teal/cyan) */
+    --text: #e2e5ec;
+    --text-muted: #7d8599;
+    /* Synth neon */
     --accent: #00d4aa;
     --accent-dim: #00a884;
-    --accent-glow: rgba(0, 212, 170, 0.15);
-    --accent-glow-strong: rgba(0, 212, 170, 0.25);
-    /* 80s/90s neon */
+    --accent-glow: rgba(0, 212, 170, 0.18);
+    --accent-glow-strong: rgba(0, 212, 170, 0.28);
     --neon-pink: #ff2a6d;
-    --neon-pink-glow: rgba(255, 42, 109, 0.2);
+    --neon-pink-glow: rgba(255, 42, 109, 0.22);
     --neon-blue: #05d9e8;
-    --neon-blue-glow: rgba(5, 217, 232, 0.15);
+    --neon-blue-glow: rgba(5, 217, 232, 0.18);
     --neon-purple: #9d4edd;
     --neon-orange: #ff6b35;
+    /* Grunge */
+    --grunge-rust: #8b4513;
+    --grunge-olive: #4a5d23;
+    --grunge-mustard: #c4a035;
+    --grunge-dirt: rgba(60, 45, 35, 0.4);
+    --grunge-warm: rgba(80, 50, 30, 0.12);
     --font-sans: 'Outfit', system-ui, sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
 }
@@ -44,6 +49,27 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    background: var(--grunge-warm);
+    mix-blend-mode: multiply;
+    pointer-events: none;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    opacity: 0.6;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+}
+
 .container {
     width: 100%;
     max-width: 1100px;
@@ -60,8 +86,9 @@ body {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(6, 8, 11, 0.92);
-    border-bottom: 1px solid var(--border-subtle);
+    background: rgba(6, 8, 11, 0.94);
+    border-bottom: 2px solid var(--border-subtle);
+    box-shadow: 0 2px 0 var(--grunge-warm);
     backdrop-filter: blur(10px);
 }
 
@@ -122,10 +149,11 @@ body {
     text-align: center;
     background:
         linear-gradient(180deg,
-            #0a0612 0%,
-            var(--bg-deep) 20%,
+            #0c0810 0%,
+            #0a0a0e 15%,
+            var(--bg-deep) 25%,
             var(--bg) 50%,
-            #0d0a14 85%,
+            #0e0c12 80%,
             var(--surface-alt) 100%);
     overflow: hidden;
 }
@@ -135,10 +163,11 @@ body {
     position: absolute;
     inset: 0;
     background-image:
+        linear-gradient(180deg, transparent 0px, rgba(0, 0, 0, 0.12) 1px, transparent 1px),
         linear-gradient(115deg, var(--border-subtle) 1px, transparent 1px),
         linear-gradient(245deg, var(--border-subtle) 1px, transparent 1px);
-    background-size: 72px 72px;
-    opacity: 0.25;
+    background-size: 100% 4px, 72px 72px, 72px 72px;
+    opacity: 0.35;
     pointer-events: none;
 }
 
@@ -173,17 +202,17 @@ body {
 
 .hero-title {
     margin: 0 0 0.75rem;
-    font-family: 'Orbitron', var(--font-mono);
-    font-size: clamp(2.5rem, 10vw, 4.5rem);
-    font-weight: 900;
-    letter-spacing: 0.08em;
+    font-family: 'Rubik Distressed', var(--font-mono);
+    font-size: clamp(1.5rem, 6.5vw, 5rem);
+    font-weight: 400;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    background: linear-gradient(135deg, var(--neon-blue) 0%, var(--accent) 40%, var(--neon-pink) 100%);
+    background: linear-gradient(135deg, var(--neon-blue) 0%, var(--accent) 35%, var(--neon-pink) 70%, var(--neon-orange) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     text-shadow: none;
-    filter: drop-shadow(0 0 30px var(--accent-glow)) drop-shadow(0 0 20px var(--neon-pink-glow));
+    filter: drop-shadow(2px 2px 0 rgba(0, 0, 0, 0.7)) drop-shadow(-1px -1px 0 rgba(0, 0, 0, 0.3)) drop-shadow(0 0 30px var(--accent-glow)) drop-shadow(0 0 20px var(--neon-pink-glow));
 }
 
 .hero-logo {
@@ -225,9 +254,9 @@ body {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--neon-blue) 0%, var(--accent) 50%, var(--neon-pink) 100%);
+    background: linear-gradient(135deg, var(--neon-blue) 0%, var(--accent) 45%, var(--neon-pink) 85%, var(--neon-orange) 100%);
     color: var(--bg);
-    box-shadow: 0 0 24px var(--accent-glow), 0 0 16px var(--neon-pink-glow);
+    box-shadow: 0 0 24px var(--accent-glow), 0 0 16px var(--neon-pink-glow), 2px 2px 0 var(--grunge-dirt);
 }
 
 .btn-primary:hover {
@@ -257,8 +286,8 @@ body {
     background: var(--surface);
     border: 1px solid var(--border);
     border-left: 4px solid var(--neon-pink);
-    border-radius: 8px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3), -2px 0 20px var(--neon-pink-glow);
+    border-radius: 4px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4), -2px 0 20px var(--neon-pink-glow), inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
 .game-card-title {
@@ -284,10 +313,13 @@ body {
 
 .section-title {
     margin: 0 0 0.5rem;
-    font-size: 1.5rem;
+    font-family: 'Teko', var(--font-sans);
+    font-size: 1.75rem;
     font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
     color: var(--text);
-    text-shadow: 0 0 20px var(--neon-blue-glow);
+    text-shadow: 0 0 20px var(--neon-blue-glow), 1px 1px 0 rgba(0, 0, 0, 0.4);
 }
 
 .section-desc {
@@ -547,5 +579,15 @@ body {
     }
     .hero {
         padding: 3rem 0 4rem;
+    }
+    .hero-title {
+        letter-spacing: 0.04em;
+    }
+}
+
+@media (max-width: 380px) {
+    .hero-title {
+        font-size: clamp(1.25rem, 5vw, 2rem);
+        letter-spacing: 0.02em;
     }
 }
