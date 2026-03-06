@@ -80,11 +80,19 @@
             var size = p.baseSize * p.life;
             if (size < 0.25) size = 0.25;
 
+            /* Brighter at bottom (fire base) */
+            var bottomFactor = p.y / rect.height;
+            if (bottomFactor > 0.5) {
+                var boost = 0.3 + 0.4 * (bottomFactor - 0.5) * 2;
+                alpha = Math.min(1, alpha * (1 + boost));
+            }
+            var glowBlur = size * (4 + (bottomFactor > 0.5 ? 3 * (bottomFactor - 0.5) * 2 : 0));
+
             ctx.beginPath();
             ctx.arc(p.x, p.y, size, 0, Math.PI * 2);
             ctx.fillStyle = 'rgba(' + p.color + ',' + alpha + ')';
             ctx.shadowColor = 'rgba(' + p.color + ',0.9)';
-            ctx.shadowBlur = size * 4;
+            ctx.shadowBlur = glowBlur;
             ctx.fill();
             ctx.shadowBlur = 0;
         }
