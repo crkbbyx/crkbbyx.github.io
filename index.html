@@ -13,88 +13,88 @@
     <link href="css/site.css" rel="stylesheet" />
 </head>
 <body>
-    <header class="site-header">
-        <div class="container header-inner">
-            <a class="brand" href="#top">
-                <img class="brand-logo" src="/g9314.png" alt="Fuzzy Robotics" width="160" height="53" />
-            </a>
-            <nav class="nav">
-                <a href="#about">About</a>
-                <a href="#experiments">Experiments</a>
-                <a href="#learn-more">Learn more</a>
-            </nav>
+<header class="site-header">
+    <div class="container header-inner">
+        <a class="brand" href="#top">
+            <img class="brand-logo" src="/g9314.png" alt="Fuzzy Robotics" width="160" height="53" />
+        </a>
+        <nav class="nav">
+            <a href="#about">About</a>
+            <a href="#experiments">Experiments</a>
+            <!--<a href="#learn-more">Learn more</a>-->
+        </nav>
+    </div>
+</header>
+
+<main id="top">
+    <section class="hero">
+        <canvas class="hero-particles" id="heroParticles" aria-hidden="true"></canvas>
+        <div class="container hero-text">
+            <h1 class="hero-title">Wasteland</h1>
+            <p class="hero-subtitle">Our shop for R&amp;D and experimentation<br />first <span class="struck">product</span> experiment coming to Kickstarter 2026</p>
         </div>
-    </header>
-
-    <main id="top">
-        <section class="hero">
-            <canvas class="hero-particles" id="heroParticles" aria-hidden="true"></canvas>
-            <div class="container hero-text">
-                <h1 class="hero-title">Wasteland</h1>
-                <p class="hero-subtitle">Our shop for R&amp;D and experimentation<br />first <span class="struck">product</span> experiment coming to Kickstarter 2026</p>
-            </div>
-            <div class="hero-mountains" aria-hidden="true">
-                <svg viewBox="0 0 200 24" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="mountains-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stop-color="var(--neon-blue)" />
-                            <stop offset="50%" stop-color="var(--accent)" />
-                            <stop offset="100%" stop-color="var(--neon-pink)" />
-                        </linearGradient>
-                    </defs>
-                    <path class="hero-mountains-line" fill="none" stroke="url(#mountains-gradient)" stroke-width="1.2" stroke-linejoin="round" d="M0,24 L18,24 L38,8.7 L52,0.75 L68,15 L92,2.4 L112,9 L132,2.25 L152,0 L168,0 L178,0 L188,0 L200,0" />
-                </svg>
-            </div>
-        </section>
-
-        <section id="about" class="section section-about">
-            <div class="container narrow">
-                <h2 class="section-title">About us</h2>
-                <p class="lead">Fuzzy Robotics runs <span class="neon-tint neon-tint-blue">Wasteland</span>, a shop for R&amp;D and experimentation. Some things get laid to <span class="neon-tint neon-tint-pink">waste</span>; others, <span class="neon-tint neon-tint-pink">beautiful</span>, make it to the <span class="neon-tint neon-tint-blue">ether</span>.</p>
-                <p>We’re not just a game studio. We build and ship things: tabletop games, tools, and whatever else fits. Our first experiment is a cybersecurity-themed board game, PTSD: Terminal 01, coming to Kickstarter. More to come.</p>
-            </div>
-        </section>
-
-        <section id="experiments" class="section section-experiments">
-            <div class="container">
-                <h2 class="section-title">Experiments</h2>
-                <div class="game-card">
-                    <h3 class="game-card-title">PTSD: Terminal 01 <span class="product-badge">First <span class="struck">product</span> experiment</span></h3>
-                    <p class="game-card-meta">Board game &amp; card game · 2–6 players · ~1 hr · Coming to Kickstarter</p>
-                    <p>You’re in the terminal—dark nets, data streams, high-stakes targets. Scan the network, stack exploits, and hit locations before the rest. Disrupt markets, harden positions, plant intel. Win with fame from hacks and end-game data value on the blockchain. The game uses data cards, location targets, and three market decks (Black hat, Grey hat, White hat) for a full tabletop experience.</p>
-                    <p class="game-card-links">
-                        <a class="btn btn-primary" href="https://sha-6a8040d1.io/" target="_blank" rel="noopener">Kickstarter landing page — notify &amp; samples</a>
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section id="learn-more" class="section section-learn-more">
-            <div class="container narrow">
-                <h2 class="section-title">Learn more</h2>
-                <p class="section-desc">Leave your details and we’ll email you updates on our experiments and Kickstarter.</p>
-                <form class="learn-more-form" name="learn-more" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-                    <input type="hidden" name="form-name" value="learn-more" />
-                    <p class="form-honeypot" aria-hidden="true">
-                        <label>Don’t fill this out: <input name="bot-field" /></label>
-                    </p>
-                    <input type="text" name="name" placeholder="Your name" required />
-                    <input type="email" name="email" placeholder="Your email" required aria-label="Your email" />
-                    <textarea name="message" rows="3" placeholder="What are you interested in? (optional)" aria-label="Message"></textarea>
-                    <button type="submit" class="btn btn-primary">Send</button>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container footer-inner">
-            <p class="copyright">© Fuzzy Robotics LLC</p>
-            <p class="footer-location">45.86° N, 111.33° W</p>
+        <div class="hero-mountains" aria-hidden="true">
+            <svg viewBox="0 0 200 24" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="mountains-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="var(--neon-blue)" />
+                        <stop offset="50%" stop-color="var(--accent)" />
+                        <stop offset="100%" stop-color="var(--neon-pink)" />
+                    </linearGradient>
+                </defs>
+                <path class="hero-mountains-line" fill="none" stroke="url(#mountains-gradient)" stroke-width="1.2" stroke-linejoin="round" d="M0,24 L18,24 L38,8.7 L52,0.75 L68,15 L92,2.4 L112,9 L132,2.25 L152,0 L168,0 L178,0 L188,0 L200,0" />
+            </svg>
         </div>
-    </footer>
+    </section>
 
-    <script src="js/particles.js"></script>
-    <script src="js/scripts.js"></script>
+    <section id="about" class="section section-about">
+        <div class="container narrow">
+            <h2 class="section-title">About us</h2>
+            <p class="lead">Fuzzy Robotics runs <span class="neon-tint neon-tint-blue">Wasteland</span>, a shop for R&amp;D and experimentation. Some things get laid to <span class="neon-tint neon-tint-pink">waste</span>; others, <span class="neon-tint neon-tint-pink">beautiful</span>, make it to the <span class="neon-tint neon-tint-blue">ether</span>.</p>
+            <p>We’re not just a game studio. We build and ship things: tabletop games, tools, and whatever else fits. Our first experiment is a cybersecurity-themed board game, PTSD: Terminal 01, coming to Kickstarter. More to come.</p>
+        </div>
+    </section>
+
+    <section id="experiments" class="section section-experiments">
+        <div class="container">
+            <h2 class="section-title">Experiments</h2>
+            <div class="game-card">
+                <h3 class="game-card-title">PTSD: Terminal 01 <span class="product-badge">First <span class="struck">product</span> experiment</span></h3>
+                <p class="game-card-meta">Board game &amp; card game · 2–6 players · ~1 hr · Coming to Kickstarter</p>
+                <p>You’re in the terminal—dark nets, data streams, high-stakes targets. Scan the network, stack exploits, and hit locations before the rest. Disrupt markets, harden positions, plant intel. Win with fame from hacks and end-game data value on the blockchain. The game uses data cards, location targets, and three market decks (Black hat, Grey hat, White hat) for a full tabletop experience.</p>
+                <p class="game-card-links">
+                    <a class="btn btn-primary" href="https://sha-6a8040d1.io/" target="_blank" rel="noopener">Kickstarter landing page — notify &amp; samples</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!--<section id="learn-more" class="section section-learn-more">
+        <div class="container narrow">
+            <h2 class="section-title">Learn more</h2>
+            <p class="section-desc">Leave your details and we’ll email you updates on our experiments and Kickstarter.</p>
+            <form class="learn-more-form" name="learn-more" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="learn-more" />
+                <p class="form-honeypot" aria-hidden="true">
+                    <label>Don’t fill this out: <input name="bot-field" /></label>
+                </p>
+                <input type="text" name="name" placeholder="Your name" required />
+                <input type="email" name="email" placeholder="Your email" required aria-label="Your email" />
+                <textarea name="message" rows="3" placeholder="What are you interested in? (optional)" aria-label="Message"></textarea>
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+        </div>
+    </section>-->
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p class="copyright">© Fuzzy Robotics LLC</p>
+        <p class="footer-location">45.86° N, 111.33° W</p>
+    </div>
+</footer>
+
+<script src="js/particles.js"></script>
+<script src="js/scripts.js"></script>
 </body>
 </html>
