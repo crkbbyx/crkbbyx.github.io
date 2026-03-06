@@ -145,6 +145,7 @@ body::before {
 /* Hero */
 .hero {
     position: relative;
+    min-height: 320px;
     padding: 4rem 0 5rem;
     text-align: center;
     background:
@@ -480,6 +481,64 @@ body::before {
 .notify-form input[type="email"]:focus {
     outline: none;
     border-color: var(--accent);
+}
+
+/* Learn more form */
+.section-learn-more {
+    background: var(--surface-alt);
+    border-top-color: var(--border-subtle);
+}
+
+.learn-more-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 420px;
+}
+
+.learn-more-form input[type="text"],
+.learn-more-form input[type="email"],
+.learn-more-form textarea {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    transition: border-color 0.2s;
+}
+
+.learn-more-form textarea {
+    resize: vertical;
+    min-height: 4rem;
+}
+
+.learn-more-form input::placeholder,
+.learn-more-form textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.learn-more-form input:focus,
+.learn-more-form textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px var(--accent-glow);
+}
+
+.learn-more-form .btn {
+    align-self: flex-start;
+}
+
+.learn-more-form .form-honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 /* Footer */
